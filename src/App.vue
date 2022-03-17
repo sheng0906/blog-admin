@@ -1,29 +1,16 @@
 <script setup>
-import { userStore } from './pinia/index';
-import { login } from '../utils/api';
-const store = userStore();
-let res = await login({
-  username: 'admin',
-  password: '123456',
-});
-console.log(res);
+import { NMessageProvider } from 'naive-ui';
+import ABc from '../src/components/ABc.vue';
+// import { userStore } from './pinia/index';
+// import { login } from '../utils/api';
+// const store = userStore();
 </script>
 
 <template>
-  <HelloWorld />
-  <button @click="store.i++">{{ store.i }}</button>
-  <router-link to="/">Go to Home</router-link>
-  <router-link to="/login">Go to About</router-link>
+  <n-message-provider>
+    <ABc />
+  </n-message-provider>
   <router-view></router-view>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
